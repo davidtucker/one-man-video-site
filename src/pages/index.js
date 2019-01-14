@@ -5,7 +5,6 @@ import Helmet from 'react-helmet'
 import Hero from '../components/hero'
 import Layout from '../components/layout'
 import ArticlePreview from '../components/article-preview'
-import VideoCover from 'react-video-cover'
 import { faFileExcel } from '@fortawesome/free-solid-svg-icons';
 import styles from './index.module.css'
 
@@ -33,23 +32,6 @@ class RootIndex extends React.Component {
       <Layout location={this.props.location} >
         <div style={{ background: '#fff' }}>
           <Helmet title={siteTitle} />
-          <div style={{
-            maxWidth: '1180px',
-            height: '500px',
-            top: 65,
-            left: 0,
-            zIndex: -1,
-            overflow: 'hidden',
-          }}>
-            <VideoCover
-              videoOptions={videoOptions}
-              remeasureOnWindowResize
-              getResizeNotifier={resizeNotifier => {
-                this.setState({
-                  resizeNotifier,
-                });
-              }} />
-          </div>
           <div className={styles.siteHeaderContainer}>
             <h1 className={styles.siteHeader}>We help you create content.</h1>
             <p>Resources for the solo video content creator</p>

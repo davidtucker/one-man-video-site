@@ -12,23 +12,21 @@
     width: 100%;
     max-width: 1180px;
     height: 500px;
-    top: 65px;
-    left: 0;
-    z-index: 1;
-    overflow: hidden;
-    position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     flex-direction: column;
+    background: url(/images/one-man-video-header.jpg);
+    background-size: cover;
+    background-position: center center;
 }
 
 .siteHeaderContainer p {
     color: #DDD;
     font-style: italic;
     font-family: 'Open Sans', sans-serif;
-    font-size: 24px;
+    font-size: 18px;
     text-transform: lowercase;
     font-weight: 300;
     margin: 10px;
@@ -75,4 +73,17 @@
 
 .secondaryButton:hover {
     background-color: rgba(40,40,40,0.7);
+}
+
+@media screen and (max-width: 680px) {
+    .siteHeaderContainer p {
+        font-size: 16px;
+    }
+    .siteHeader {
+        font-size: 50px;
+        line-height: 46px;
+    }
+    .ctaButton, .secondaryButton {
+        font-size: 14px;
+    }
 }
