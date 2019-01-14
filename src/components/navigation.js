@@ -6,7 +6,7 @@ import { faBars } from '@fortawesome/free-solid-svg-icons'
 import HamburgerMenu from 'react-hamburger-menu'
 import { CSSTransitionGroup } from 'react-transition-group'
 
-class Navigation extends React.Component {
+class Navigation extends React.Component { 
 
   constructor (props) {
     super(props);
@@ -36,6 +36,12 @@ class Navigation extends React.Component {
             </li>
             <li className={styles.navigationItem}>
               <Link to="/blog/">Blog</Link>
+            </li>
+            <li className={styles.navigationItem}>
+              <Link to="/contact/">Contact</Link>
+            </li>
+            <li className={styles.navigationHighlightedItem}>
+              <a href="https://www.youtube.com/channel/UCj72bZAgJHENdhQnKoYvb5A">YouTube</a>
             </li>
             <li className={styles.hamburgerIcon}>
               <HamburgerMenu
@@ -74,7 +80,10 @@ class MobileMenu extends React.Component {
           <Link to="/blog/">Blog</Link>
         </li>
         <li className={styles.mobiuleNavigationItem}>
-          <Link to="/blog/">Contact</Link>
+          <Link to="/contact/">Contact</Link>
+        </li>
+        <li className={styles.mobiuleNavigationItem}>
+          <a href="https://www.youtube.com/channel/UCj72bZAgJHENdhQnKoYvb5A">YouTube</a>
         </li>
       </ul>
     )

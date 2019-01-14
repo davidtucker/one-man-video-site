@@ -43,13 +43,32 @@
   font-weight: 700;
 }
 
+.navigationHighlightedItem {
+  background-color: #4655a5;
+  color: white;
+  font-size: 14px;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  margin-left: 10px;
+  transition: 0.5s;
+}
+
+.navigationHighlightedItem:hover {
+  background-color: #303b73;
+}
+
+.navigationHighlightedItem a {
+  text-decoration: none;
+  color: white;
+}
+
 .hamburgerIcon {
   display: none;
   color: #FFF;
 }
 
 @media screen and (max-width: 680px) {
-  .navigationItem {
+  .navigationItem, .navigationHighlightedItem {
     display: none;
   }
   .hamburgerIcon {
@@ -62,13 +81,14 @@
   margin: 0;
   padding: 0;
   width: 100%;
-  position: fixed;
+  position: absolute;
   top: 70px;
-  height: 180px;
+  height: 220px;
   z-index: 2;
   background-color: rgba(90, 90, 90, 0.9);
-  color: #e1e3ef;;
+  color: #e1e3ef;
   padding-top: 10px;
+  overflow: hidden;
 }
 
 .mobileNavigation li {
@@ -88,7 +108,7 @@
 }
 
 :global(.slide-enter.slide-enter-active) {
-  height: 180px;
+  height: 220px;
   transition: height .3s ease;
 }
 

@@ -1,0 +1,76 @@
+.siteHeader {
+    font-size: 64px;
+    color: #FFFFFF;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    margin: 20px 20vw;
+    margin-bottom: 5px;
+    line-height: 60px;
+}
+
+.siteHeaderContainer {
+    width: 100%;
+    max-width: 1180px;
+    height: 500px;
+    top: 65px;
+    left: 0;
+    z-index: 1;
+    overflow: hidden;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.siteHeaderContainer p {
+    color: #DDD;
+    font-style: italic;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    text-transform: lowercase;
+    font-weight: 300;
+}
+
+.buttonGroup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 5px;
+}
+
+.ctaButton {
+    display: block;
+    background-color: #4655a5;
+    padding: 8px 15px;
+    color: #FFF;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    transition: 0.5s;
+}
+
+.ctaButton:hover {
+    background-color: #303b73;
+}
+
+.secondaryButton {
+    display: block;
+    background-color: rgba(40,40,40,0.15);
+    color: #FFF;
+    border: 1px solid #AAA;
+    padding: 6px 12px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    margin-left: 10px;
+    transition: 0.5s;
+}
+
+.secondaryButton:hover {
+    background-color: rgba(40,40,40,0.7);
+}
