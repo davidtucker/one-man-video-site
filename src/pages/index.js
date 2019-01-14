@@ -1,12 +1,15 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import { Link } from 'gatsby'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
 import Hero from '../components/hero'
 import Layout from '../components/layout'
 import ArticlePreview from '../components/article-preview'
-import { faFileExcel } from '@fortawesome/free-solid-svg-icons';
+import { faFileExcel } from '@fortawesome/free-solid-svg-icons'
 import styles from './index.module.css'
+import FeaturedArticleCard from '../components/featured-card'
+import ArticleCard from '../components/article-card'
 
 class RootIndex extends React.Component {
 
@@ -40,17 +43,26 @@ class RootIndex extends React.Component {
               <a href="#" className={styles.secondaryButton}>Getting Started</a>
             </div>
           </div>
-          <div className="wrapper">          
-            <h2 className="section-headline">Recent articles</h2>
-            <ul className="article-list">
-              {posts.map(({ node }) => {
-                return (
-                  <li key={node.slug}>
-                    <ArticlePreview article={node} />
-                  </li>
-                )
-              })}
-            </ul>
+          <div className="wrapper"> 
+            <div className={styles.featuredSection}>
+              <h2 className={styles.sectionHeader}>Featured Articles</h2>   
+              <FeaturedArticleCard />
+            </div>
+            <div className={styles.recentSection}>
+              <h2 className={styles.sectionHeader}>Recent Articles</h2>
+              <ul className={styles.articleList}>
+                {posts.map(({ node }) => {
+                  return (
+                    <li key={node.slug}>
+                      <ArticleCard />
+                    </li>
+                  )
+                })}
+              </ul>
+            </div>
+            <div className={styles.postArticles}>
+                <Link to="/blog/">More Articles</Link>
+            </div>
           </div>
         </div>
       </Layout>

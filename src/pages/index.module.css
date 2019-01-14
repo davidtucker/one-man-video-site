@@ -8,6 +8,62 @@
     line-height: 60px;
 }
 
+.wrapper {
+    margin: 20px 0;
+}
+
+.sectionHeader {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 21px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    margin-top: 0;
+    color: #4655a5;
+}
+
+.recentSection {
+
+}
+
+.featuredSection {
+    margin-bottom: 30px;
+}
+
+.postArticles {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.postArticles a {
+    margin-top: 30px;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border: 1px solid #4655a5;
+    color: #4655a5;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.5s;
+}
+
+.postArticles a:hover {
+    background-color: #4655a5;
+    color: #FFF;
+}
+
+.articleList {
+    margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 2vmin;
+  margin-top: 30px;
+}
+
 .siteHeaderContainer {
     width: 100%;
     max-width: 1180px;
@@ -46,12 +102,13 @@
 .ctaButton {
     display: block;
     background-color: #4655a5;
-    padding: 8px 20px;
+    padding: 10px 22px;
     color: #FFF;
     text-decoration: none;
     text-transform: uppercase;
-    font-size: 16px;
+    font-size: 14px;
     transition: 0.5s;
+    border-radius: 4px;
 }
 
 .ctaButton:hover {
@@ -63,16 +120,17 @@
     background-color: rgba(40,40,40,0.15);
     color: #FFF;
     border: 1px solid #AAA;
-    padding: 6px 20px;
+    padding: 8px 22px;
     text-decoration: none;
     text-transform: uppercase;
-    font-size: 16px;
+    font-size: 14px;
     margin-left: 10px;
     transition: 0.5s;
+    border-radius: 4px;
 }
 
 .secondaryButton:hover {
-    background-color: rgba(40,40,40,0.7);
+    background-color: rgba(40,40,40,0.6);
 }
 
 @media screen and (max-width: 680px) {
