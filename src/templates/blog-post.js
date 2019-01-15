@@ -19,7 +19,7 @@ class BlogPostTemplate extends React.Component {
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
 
     let body = "";
-    if(post.headerEmbed.childMarkdownRemark.html && post.headerEmbed.childMarkdownRemark.html.length > 1) {
+    if(post.headerEmbed && post.headerEmbed.childMarkdownRemark.html.length > 1) {
       body += `<div class="video-responsive">${post.headerEmbed.childMarkdownRemark.html}</div>`;
     }
     body += `<div class="content-body">${post.body.childMarkdownRemark.html}</div>`
