@@ -63,7 +63,6 @@ const createPages = (graphql, createPage) => {
         }
 
         const pages = result.data.allContentfulPage.edges
-        console.dir(pages)
         pages.forEach((page, index) => {
           createPage({
             path: `/${page.node.slug}/`,

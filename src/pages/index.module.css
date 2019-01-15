@@ -75,7 +75,7 @@
     flex-direction: column;
     background: url(/images/one-man-video-header.jpg);
     background-size: cover;
-    background-position: center center;
+    background-position: center top;
 }
 
 .siteHeaderContainer p {
