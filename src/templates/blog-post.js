@@ -9,11 +9,6 @@ import Layout from '../components/layout'
 import styles from './blog-post.module.css'
 
 class BlogPostTemplate extends React.Component {
-  
-  Body(props) {
-    
-  }
-
   render() {
     const post = get(this.props, 'data.contentfulBlogPost')
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
@@ -67,11 +62,11 @@ export const pageQuery = graphql`
       publishDate(formatString: "MMMM Do, YYYY")
       heroImage {
         fixed(width: 1920) {
-            width
-            height
-            src
-            srcSet
-          }
+          width
+          height
+          src
+          srcSet
+        }
       }
       body {
         childMarkdownRemark {

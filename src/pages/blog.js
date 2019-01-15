@@ -48,12 +48,9 @@ export const pageQuery = graphql`
           publishDate(formatString: "MMMM Do, YYYY")
           tags
           heroImage {
-            resolutions(width: 1920) {
-                width
-                height
-                src
-                srcSet
-              }
+            fluid(maxWidth: 1920, maxHeight: 1080) {
+              ...GatsbyContentfulFluid
+            }
           }
           description {
             childMarkdownRemark {
