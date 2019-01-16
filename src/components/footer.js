@@ -27,8 +27,8 @@ export default ({ data }) => (
             <div className={styles.preFooter3}>
                 <h4>Social</h4>
                 <ul>
-                    <li><a href="">YouTube</a></li>
-                    <li><a href="">Twitter</a></li>
+                    <li><a href="https://www.youtube.com/channel/UCj72bZAgJHENdhQnKoYvb5A">YouTube</a></li>
+                    <li><a href="https://twitter.com/oneman_video">Twitter</a></li>
                 </ul>
             </div>
         </div>

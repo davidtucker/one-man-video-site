@@ -5,6 +5,7 @@ import Helmet from 'react-helmet'
 import Hero from '../components/hero'
 import Layout from '../components/layout'
 import ArticlePreview from '../components/article-preview'
+import ContactForm from '../components/contact-form'
 
 class Contact extends React.Component {
   render() {
@@ -14,6 +15,7 @@ class Contact extends React.Component {
           <Helmet title="Contact Us" />
           <div className="wrapper">
             <h2 className="section-headline">Contact Us</h2>
+            <ContactForm />
           </div>
         </div>
       </Layout>

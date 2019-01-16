@@ -24,17 +24,19 @@ class BlogPostTemplate extends React.Component {
         <div style={{ background: '#fff' }}>
           <Helmet title={`${post.title} | ${siteTitle}`} />
           <div className={styles.hero} style={{
-            backgroundImage: `url(${post.heroImage.fixed.src})`,
+            
+            backgroundImage: `linear-gradient(black, black), url(${post.heroImage.fixed.src})`,
             backgroundSize: 'cover',
-            backgroundPosition: 'center center'
+            backgroundPosition: 'center center',
+            backgroundBlendMode: 'saturation'
           }}>
             <div className={styles.heroContent}>
               <h4>Article</h4>
               <h2>{post.title}</h2>
               <div className={styles.byline}>
-                  <img className={styles.authorImage} src="/images/david-tucker.png" />
+                  <img className={styles.authorImage} src={post.author.image.fluid.src} />
                   <div className={styles.metadata}>
-                    <div className={styles.authorName}><Link to="/">David Tucker</Link></div>
+                    <div className={styles.authorName}><Link to="/">{post.author.name}</Link></div>
                     <div className={styles.dateTime}>{post.publishDate}</div>
                   </div>
               </div>
@@ -76,6 +78,14 @@ export const pageQuery = graphql`
       headerEmbed {
         childMarkdownRemark {
           html
+        }
+      }
+      author {
+        name
+        image {
+          fluid(maxWidth: 100, maxHeight: 100, resizingBehavior: SCALE) {
+            src
+          }
         }
       }
     }
