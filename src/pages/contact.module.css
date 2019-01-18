@@ -1,0 +1,83 @@
+.contactWrapper {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 3vmin;
+    padding: 20px;
+}
+
+.contactLeft {
+    grid-column: span 6;
+    padding: 20px;
+}
+
+.contactLeft h2 {
+    font-size: 64px;
+    color: #4655a5;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    line-height: 60px;
+}
+
+.contactRight input, .contactRight textarea {
+    width: 100%;
+    background-color: #EFEFEF;
+    box-shadow: 0;
+    border: 1px solid #DDD;
+    font-size: 18px;
+    padding: 10px;
+    color: #999;
+    margin-top: 10px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.contactRight input:focus, .contactRight textarea:focus {
+    outline: none !important;
+    border:1px solid #4655a5;
+}
+
+.contactRight label {
+    color: #999;
+    font-size: 14px;
+    display: block;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.contactRight {
+    grid-column: span 6;
+    padding: 40px;
+}
+
+.submitButton {
+    background-color: #4655a5;
+    padding: 10px 20px;
+    color: #FFF;
+    text-transform: uppercase;
+    border: 0px;
+    margin-top: 15px;
+    font-size: 14px;
+    font-weight: 300;
+    display: inline-block;
+    text-decoration: none;
+    transition: 0.5s;
+    border-radius: 4px;
+}
+
+.submitButton:hover {
+    background-color: #303b73;
+    transition: 0.5s;
+}
+
+
+@media screen and (max-width: 680px) {
+    .contactLeft {
+        grid-column: span 12;
+        padding: 0px;
+        margin: 0px;
+    }
+    
+    .contactRight {
+        grid-column: span 12;
+        padding: 0px;
+        margin: 0px;
+    }
+}

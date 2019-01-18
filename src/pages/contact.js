@@ -3,8 +3,8 @@ import { navigateTo } from "gatsby-link";
 import Recaptcha from "react-google-recaptcha";
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
-import styles from './blog.module.css'
 import Layout from "../components/layout"
+import styles from './contact.module.css'
 
 function encode(data) {
   return Object.keys(data)
@@ -48,46 +48,50 @@ export default class Contact extends React.Component {
           <div className={styles.hero}>
             Blog
           </div>
-          <div className="wrapper">
-            <h1>reCAPTCHA 2</h1>
-            <form
-              name="contact-recaptcha"
-              method="post"
-              action="/success/"
-              data-netlify="true"
-              data-netlify-recaptcha="true"
-              onSubmit={this.handleSubmit}
-            >
-              <noscript>
-                <p>This form won’t work with Javascript disabled</p>
-              </noscript>
-              <p>
-                <label>
-                  Your name:<br />
-                  <input type="text" name="name" onChange={this.handleChange} />
-                </label>
-              </p>
-              <p>
-                <label>
-                  Your email:<br />
-                  <input type="email" name="email" onChange={this.handleChange} />
-                </label>
-              </p>
-              <p>
-                <label>
-                  Message:<br />
-                  <textarea name="message" onChange={this.handleChange} />
-                </label>
-              </p>
-              <Recaptcha
-                ref="recaptcha"
-                sitekey={process.env.SITE_RECAPTCHA_KEY}
-                onChange={this.handleRecaptcha}
-              />
-              <p>
-                <button type="submit">Send</button>
-              </p>
-            </form>
+          <div className={styles.contactWrapper}>
+            <div className={styles.contactLeft}>
+              <h2>We Want to Hear From You.</h2>
+            </div>
+            <div className={styles.contactRight}>
+              <form
+                name="contact-recaptcha"
+                method="post"
+                action="/success/"
+                data-netlify="true"
+                data-netlify-recaptcha="true"
+                onSubmit={this.handleSubmit}
+              >
+                <noscript>
+                  <p>This form won’t work with Javascript disabled</p>
+                </noscript>
+                <p>
+                  <label>
+                    Your name:<br />
+                    <input type="text" name="name" onChange={this.handleChange} />
+                  </label>
+                </p>
+                <p>
+                  <label>
+                    Your email:<br />
+                    <input type="email" name="email" onChange={this.handleChange} />
+                  </label>
+                </p>
+                <p>
+                  <label>
+                    Message:<br />
+                    <textarea name="message" onChange={this.handleChange} />
+                  </label>
+                </p>
+                <Recaptcha
+                  ref="recaptcha"
+                  sitekey={process.env.SITE_RECAPTCHA_KEY}
+                  onChange={this.handleRecaptcha}
+                />
+                <p>
+                  <button type="submit" className={styles.submitButton}>Send Message</button>
+                </p>
+              </form>
+            </div>
           </div>
         </div>
       </Layout>
