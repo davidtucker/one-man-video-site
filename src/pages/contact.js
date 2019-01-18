@@ -1,8 +1,23 @@
 import React from "react";
 import { navigateTo } from "gatsby-link";
+import Recaptcha from "react-google-recaptcha";
+import get from 'lodash/get'
 import Helmet from 'react-helmet'
 import styles from './blog.module.css'
 import Layout from "../components/layout"
+
+let recaptchaConfig
+
+try {
+  // Load the Contentful config from the .contentful.json
+  recaptchaConfig = require('../../.recaptcha')
+} catch (_) {}
+
+// Overwrite the Contentful config with environment variables if they exist
+recaptchaConfig = {
+  RECAPTCHA_KEY: process.env.SITE_RECAPTCHA_KEY || recaptchaConfig.siteKey,
+  RECAPTCHA_SECRET: process.env.SITE_RECAPTCHA_SECRET || recaptchaConfig.secretKey,
+}
 
 function encode(data) {
   return Object.keys(data)
@@ -18,6 +33,10 @@ export default class Contact extends React.Component {
 
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value });
+  };
+
+  handleRecaptcha = value => {
+    this.setState({ "g-recaptcha-response": value });
   };
 
   handleSubmit = e => {
@@ -40,26 +59,21 @@ export default class Contact extends React.Component {
       <Layout location={this.props.location} >
         <div style={{ background: '#fff' }}>
           <div className={styles.hero}>
-            Contact Us
+            Blog
           </div>
           <div className="wrapper">
-            <h1>Contact</h1>
+            <h1>reCAPTCHA 2</h1>
             <form
-              name="contact"
+              name="contact-recaptcha"
               method="post"
               action="/thanks/"
               data-netlify="true"
-              data-netlify-honeypot="bot-field"
+              data-netlify-recaptcha="true"
               onSubmit={this.handleSubmit}
             >
-              {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
-              <input type="hidden" name="form-name" value="contact" />
-              <p hidden>
-                <label>
-                  Don’t fill this out:{" "}
-                  <input name="bot-field" onChange={this.handleChange} />
-                </label>
-              </p>
+              <noscript>
+                <p>This form won’t work with Javascript disabled</p>
+              </noscript>
               <p>
                 <label>
                   Your name:<br />
@@ -78,6 +92,11 @@ export default class Contact extends React.Component {
                   <textarea name="message" onChange={this.handleChange} />
                 </label>
               </p>
+              <Recaptcha
+                ref="recaptcha"
+                sitekey={recaptchaConfig.RECAPTCHA_KEY}
+                onChange={this.handleRecaptcha}
+              />
               <p>
                 <button type="submit">Send</button>
               </p>
