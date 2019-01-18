@@ -5,7 +5,7 @@ import { Link } from 'gatsby'
 import styles from './footer.module.css'
 
 export default ({ }) => (
-    <form name="contact" method="POST" action="/success" data-netlify="true" data-netlify-honeypot="bot-field">
+    <form name="contact" method="POST" action="/success/" data-netlify="true" data-netlify-honeypot="bot-field">
         <input type="hidden" name="bot-field" />
         <div className="field half first">
             <label htmlFor="name">Name</label>
