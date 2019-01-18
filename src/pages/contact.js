@@ -6,8 +6,6 @@ import Helmet from 'react-helmet'
 import styles from './blog.module.css'
 import Layout from "../components/layout"
 
-let RECAPTCHA_KEY = process.env.SITE_RECAPTCHA_KEY;
-
 function encode(data) {
   return Object.keys(data)
     .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
@@ -83,7 +81,7 @@ export default class Contact extends React.Component {
               </p>
               <Recaptcha
                 ref="recaptcha"
-                sitekey={RECAPTCHA_KEY}
+                sitekey={process.env.SITE_RECAPTCHA_KEY}
                 onChange={this.handleRecaptcha}
               />
               <p>
