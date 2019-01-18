@@ -54,7 +54,7 @@
 
 .contactRight {
     grid-column: span 6;
-    padding: 20px;
+    padding: 20px 40px;
 }
 
 .submitButton {
