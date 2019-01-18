@@ -6,16 +6,7 @@ import Helmet from 'react-helmet'
 import styles from './blog.module.css'
 import Layout from "../components/layout"
 
-let recaptchaConfig
-
-try {
-  // Load the Contentful config from the .contentful.json
-  recaptchaConfig = require('../../.recaptcha')
-} catch (_) {}
-
-// Overwrite the Contentful config with environment variables if they exist
-let RECAPTCHA_KEY = process.env.SITE_RECAPTCHA_KEY || recaptchaConfig.siteKey;
-let RECAPTCHA_SECRET = process.env.SITE_RECAPTCHA_SECRET || recaptchaConfig.secretKey;
+let RECAPTCHA_KEY = process.env.SITE_RECAPTCHA_KEY;
 
 function encode(data) {
   return Object.keys(data)
