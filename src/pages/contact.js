@@ -45,12 +45,10 @@ export default class Contact extends React.Component {
     return (
       <Layout location={this.props.location} >
         <div style={{ background: '#fff' }}>
-          <div className={styles.hero}>
-            Blog
-          </div>
           <div className={styles.contactWrapper}>
             <div className={styles.contactLeft}>
               <h2>We Want to Hear From You.</h2>
+              <p>Send us your ideas, thoughts, opportunities, or just say hi. We will get back in touch with you soon.</p>
             </div>
             <div className={styles.contactRight}>
               <form
