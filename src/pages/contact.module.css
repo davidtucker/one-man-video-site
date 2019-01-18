@@ -8,6 +8,7 @@
 .contactLeft {
     grid-column: span 6;
     padding: 20px;
+    
 }
 
 .contactLeft h2 {
@@ -24,7 +25,7 @@
 .contactLeft p {
     font-style: italic;
     color: #999;
-    font-size: 14px;
+    font-size: 18px;
 }
 
 .contactRight input, .contactRight textarea {
@@ -53,7 +54,7 @@
 
 .contactRight {
     grid-column: span 6;
-    padding: 40px;
+    padding: 20px;
 }
 
 .submitButton {
