@@ -14,10 +14,8 @@ try {
 } catch (_) {}
 
 // Overwrite the Contentful config with environment variables if they exist
-recaptchaConfig = {
-  RECAPTCHA_KEY: process.env.SITE_RECAPTCHA_KEY || recaptchaConfig.siteKey,
-  RECAPTCHA_SECRET: process.env.SITE_RECAPTCHA_SECRET || recaptchaConfig.secretKey,
-}
+let RECAPTCHA_KEY = process.env.SITE_RECAPTCHA_KEY || recaptchaConfig.siteKey;
+let RECAPTCHA_SECRET = process.env.SITE_RECAPTCHA_SECRET || recaptchaConfig.secretKey;
 
 function encode(data) {
   return Object.keys(data)
@@ -94,7 +92,7 @@ export default class Contact extends React.Component {
               </p>
               <Recaptcha
                 ref="recaptcha"
-                sitekey={recaptchaConfig.RECAPTCHA_KEY}
+                sitekey={RECAPTCHA_KEY}
                 onChange={this.handleRecaptcha}
               />
               <p>
