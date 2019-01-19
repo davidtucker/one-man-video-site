@@ -28,6 +28,7 @@
     color: #999;
     margin-top: 10px;
     font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
 }
 
 .contactRight input:focus, .contactRight textarea:focus {
@@ -66,7 +67,6 @@
     background-color: #303b73;
     transition: 0.5s;
 }
-
 
 @media screen and (max-width: 680px) {
     .contactLeft {
