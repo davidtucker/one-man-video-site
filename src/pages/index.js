@@ -19,17 +19,10 @@ class RootIndex extends React.Component {
 
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
-    const posts = get(this, 'props.data.allContentfulBlogPost.edges')
+    let posts = get(this, 'props.data.allContentfulBlogPost.edges')
+    let featuredPost = posts.filter(post => post.node.featured === true).shift();
+    let standardPosts = posts.filter(post => post.node.featured === false).slice(0,3);
     const [author] = get(this, 'props.data.allContentfulPerson.edges')
-    const videoOptions = {
-      src: '/videos/one-man-video-header.mp4',
-      autoPlay: true,
-      muted: true,
-      loop: true,
-      ref: videoRef => {
-        this.videoRef = videoRef;
-      }
-    }
 
     return (
       <Layout location={this.props.location} >
@@ -39,22 +32,22 @@ class RootIndex extends React.Component {
             <h1 className={styles.siteHeader}>We help you create content.</h1>
             <p>Resources for the solo video content creator</p>
             <div className={styles.buttonGroup}>
-              <a href="#" className={styles.ctaButton}>Subscribe</a>
-              <a href="#" className={styles.secondaryButton}>Getting Started</a>
+              <a href="http://eepurl.com/gffuhT" className={styles.ctaButton}>Subscribe</a>
+              <a href="/blog/intro-one-man-video" className={styles.secondaryButton}>Learn More</a>
             </div>
           </div>
           <div className="wrapper"> 
             <div className={styles.featuredSection}>
               <h2 className={styles.sectionHeader}>Featured Articles</h2>   
-              <FeaturedArticleCard />
+              <FeaturedArticleCard articleData={featuredPost.node} />
             </div>
             <div className={styles.recentSection}>
               <h2 className={styles.sectionHeader}>Recent Articles</h2>
               <ul className={styles.articleList}>
-                {posts.map(({ node }) => {
+                {standardPosts.map(({ node }) => {
                   return (
                     <li key={node.slug}>
-                      <ArticleCard />
+                      <ArticleCard articleData={node} />
                     </li>
                   )
                 })}
@@ -82,10 +75,11 @@ export const pageQuery = graphql`
           publishDate(formatString: "MMMM Do, YYYY")
           tags
           heroImage {
-            fluid(maxWidth: 350, maxHeight: 196, resizingBehavior: SCALE) {
+            fluid(maxWidth: 960, maxHeight: 540, resizingBehavior: SCALE) {
               src
             }
           }
+          featured
           description {
             childMarkdownRemark {
               html

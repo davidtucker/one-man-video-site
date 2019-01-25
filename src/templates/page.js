@@ -4,6 +4,8 @@ import Helmet from 'react-helmet'
 import get from 'lodash/get'
 import Img from 'gatsby-image'
 import Layout from '../components/layout'
+import Hero from '../components/hero'
+import styles from './page.module.css'
 
 import heroStyles from '../components/hero.module.css'
 
@@ -13,11 +15,13 @@ class PageTemplate extends React.Component {
 
     return (
       <Layout location={this.props.location} >
+        <Hero 
+          backgroundImage={post.heroImage.fixed.src}
+          title={post.title} />
         <div style={{ background: '#fff' }}>
           <Helmet title={`${post.title}`} />
           <div className="wrapper">
-            <h1 className="section-headline">{post.title}</h1>
-            <div
+            <div className={styles.pageContent}
               dangerouslySetInnerHTML={{
                 __html: post.body.childMarkdownRemark.html,
               }}
@@ -38,6 +42,14 @@ export const pageQuery = graphql`
       body {
         childMarkdownRemark {
           html
+        }
+      }
+      heroImage {
+        fixed(width: 1920) {
+          width
+          height
+          src
+          srcSet
         }
       }
     }

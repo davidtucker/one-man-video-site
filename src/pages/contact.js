@@ -5,6 +5,7 @@ import get from 'lodash/get'
 import Helmet from 'react-helmet'
 import Layout from "../components/layout"
 import styles from './contact.module.css'
+import Hero from '../components/hero'
 
 function encode(data) {
   return Object.keys(data)
@@ -44,6 +45,9 @@ export default class Contact extends React.Component {
   render() {
     return (
       <Layout location={this.props.location} >
+        <Hero 
+          backgroundImage="/images/contact-bg.jpg"
+          title="Contact Us" />
         <div style={{ background: '#fff' }}>
           <div className={styles.contactWrapper}>
             <div className={styles.contactLeft}>

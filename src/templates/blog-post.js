@@ -5,6 +5,7 @@ import get from 'lodash/get'
 import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 import Layout from '../components/layout'
+import Hero from '../components/hero'
 
 import styles from './blog-post.module.css'
 
@@ -16,32 +17,21 @@ class BlogPostTemplate extends React.Component {
     let body = "";
     if(post.headerEmbed && post.headerEmbed.childMarkdownRemark.html.length > 1) {
       body += `<div class="video-responsive">${post.headerEmbed.childMarkdownRemark.html}</div>`;
+      body += `<h4>Video Notes</h4>`;
     }
     body += `<div class="content-body">${post.body.childMarkdownRemark.html}</div>`
 
     return (
       <Layout location={this.props.location} >
+        <Helmet title={`${post.title} | ${siteTitle}`} />
         <div style={{ background: '#fff' }}>
-          <Helmet title={`${post.title} | ${siteTitle}`} />
-          <div className={styles.hero} style={{
-            
-            backgroundImage: `linear-gradient(black, black), url(${post.heroImage.fixed.src})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center center',
-            backgroundBlendMode: 'saturation'
-          }}>
-            <div className={styles.heroContent}>
-              <h4>Article</h4>
-              <h2>{post.title}</h2>
-              <div className={styles.byline}>
-                  <img className={styles.authorImage} src={post.author.image.fluid.src} />
-                  <div className={styles.metadata}>
-                    <div className={styles.authorName}><Link to="/">{post.author.name}</Link></div>
-                    <div className={styles.dateTime}>{post.publishDate}</div>
-                  </div>
-              </div>
-            </div>
-          </div>
+        <Hero 
+          backgroundImage={post.heroImage.fixed.src}
+          title={post.title}
+          authorName={post.author.name}
+          authorImage={post.author.image.fluid.src}
+          publishDate={post.publishDate}
+          subtitle="Article" />
           <div className="wrapper">
             <div
               dangerouslySetInnerHTML={{

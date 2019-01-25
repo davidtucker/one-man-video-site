@@ -1,0 +1,42 @@
+.byline {
+    color: #000;
+    font-size: 13px;
+    display: flex;
+    align-content: center;
+    flex-direction: row;
+    padding: 0;
+    margin-top: 30px;
+  }
+  
+  .authorImage {
+    display: block;
+    height: 40px;
+    width: 40px;
+  }
+  
+  .metadata {
+    
+  }
+  
+  .authorName {
+    color: #BBB;
+    margin-left: 15px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+  }
+  
+  .authorName a {
+    color: #FFF;
+    font-weight: 400;
+    text-decoration: none;
+  }
+  
+  .dateTime {
+    margin-top: -5px;
+    color: #DDD;
+    margin-left: 15px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+  }

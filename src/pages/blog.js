@@ -2,9 +2,11 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
+import Hero from '../components/hero'
 import styles from './blog.module.css'
 import Layout from "../components/layout"
 import ArticlePreview from '../components/article-preview'
+import ArticleCard from '../components/article-card'
 
 class BlogIndex extends React.Component {
   render() {
@@ -13,18 +15,17 @@ class BlogIndex extends React.Component {
 
     return (
       <Layout location={this.props.location} >
+        <Hero 
+          backgroundImage="/images/blog-bg.jpg"
+          title="Blog" />
         <div style={{ background: '#fff' }}>
           <Helmet title={siteTitle} />
-          <div className={styles.hero}>
-            Blog
-          </div>
           <div className="wrapper">
-            <h2 className="section-headline">Recent articles</h2>
             <ul className="article-list">
               {posts.map(({ node }) => {
                 return (
                   <li key={node.slug}>
-                    <ArticlePreview article={node} />
+                    <ArticleCard articleData={node} />
                   </li>
                 )
               })}
@@ -49,7 +50,7 @@ export const pageQuery = graphql`
           tags
           heroImage {
             fluid(maxWidth: 1920, maxHeight: 1080) {
-              ...GatsbyContentfulFluid
+              src
             }
           }
           description {

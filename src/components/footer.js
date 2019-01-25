@@ -13,7 +13,7 @@ export default ({ data }) => (
                     <img src="/images/one-man-video-logo.svg" />
                 </Link>
                 <p>This is some sample text.  This is the best sample text in the history of the Internet. This is some sample text.  This is the best sample text in the history of the Internet.</p>
-                <a href="#" className={styles.footerButton}>Subscribe</a>
+                <a href="http://eepurl.com/gffuhT" className={styles.footerButton}>Subscribe</a>
             </div>
             <div className={styles.preFooter2}>
                 <h4>Pages</h4>
