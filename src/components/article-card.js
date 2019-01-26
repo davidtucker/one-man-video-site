@@ -18,7 +18,9 @@ class ArticleCard extends React.Component {
     return (
       <div className={styles.articleCard}>
         <div className={styles.imageSide} style={{
-            backgroundImage: `url('${this.props.articleData.heroImage.fluid.src}')`
+            backgroundImage: `url('${this.props.articleData.heroImage.fluid.src}')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center top'
         }}>
         </div>
         <div className={styles.textSide}>
