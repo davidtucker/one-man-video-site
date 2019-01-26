@@ -29,12 +29,6 @@ class ArticleCard extends React.Component {
             <p className={styles.description} dangerouslySetInnerHTML={{
                 __html: this.props.articleData.description.childMarkdownRemark.html
               }}></p>
-            <p className={styles.dateTime}>January 18, 2019</p>
-            <div className={styles.byline}>
-                <img className={styles.authorImage} src="/images/david-tucker.png" />
-                <p className={styles.authorName}>Written by <Link to="/">David Tucker</Link></p>
-            </div>
-            
         </div>
       </div>
     )
