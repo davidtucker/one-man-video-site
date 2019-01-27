@@ -44,13 +44,12 @@ class RootIndex extends React.Component {
             <div className={styles.recentSection}>
               <h2 className={styles.sectionHeader}>Recent Articles</h2>
               <ul className={styles.articleList}>
-                {standardPosts.map(({ node }) => {
-                  return (
-                    <li key={node.slug}>
-                      <ArticleCard articleData={node} />
-                    </li>
-                  )
-                })}
+                  <li>
+                    <ArticleCard articleData={standardPosts[0].node} />
+                  </li>
+                  <li>
+                    <ArticleCard articleData={standardPosts[1].node} />
+                  </li>
               </ul>
             </div>
             <div className={styles.postArticles}>
