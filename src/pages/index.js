@@ -13,10 +13,6 @@ import ArticleCard from '../components/article-card'
 
 class RootIndex extends React.Component {
 
-  state = {
-    resizeNotifier: () => {},
-  }
-
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     let posts = get(this, 'props.data.allContentfulBlogPost.edges')
@@ -36,7 +32,7 @@ class RootIndex extends React.Component {
               <a href="/blog/intro-one-man-video" className={styles.secondaryButton}>Learn More</a>
             </div>
           </div>
-          <div className="wrapper"> 
+          <div className="wrapper">
             <div className={styles.featuredSection}>
               <h2 className={styles.sectionHeader}>Featured Articles</h2>   
               <FeaturedArticleCard articleData={featuredPost.node} />
@@ -44,12 +40,13 @@ class RootIndex extends React.Component {
             <div className={styles.recentSection}>
               <h2 className={styles.sectionHeader}>Recent Articles</h2>
               <ul className={styles.articleList}>
-                  <li>
-                    <ArticleCard articleData={standardPosts[0].node} />
-                  </li>
-                  <li>
-                    <ArticleCard articleData={standardPosts[1].node} />
-                  </li>
+                {standardPosts.map(({ node }) => {
+                  return (
+                    <li key={node.slug}>
+                      <ArticleCard articleData={node} />
+                    </li>
+                  )
+                })}
               </ul>
             </div>
             <div className={styles.postArticles}>
