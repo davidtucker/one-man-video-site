@@ -19,7 +19,7 @@ const ArticleCard = ({ articleData }) => (
           <h4>Article</h4>
           <h2><Link to={`/blog/${articleData.slug}`}>{articleData.title}</Link></h2>
           <p className={styles.description} dangerouslySetInnerHTML={{
-              __html: articleData.description.childMarkdownRemark.html
+              __html: articleData.description.description
             }}></p>
       </div>
     </div>

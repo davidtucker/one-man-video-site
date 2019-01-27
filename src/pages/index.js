@@ -77,6 +77,7 @@ export const pageQuery = graphql`
           }
           featured
           description {
+            description
             childMarkdownRemark {
               html
             }
