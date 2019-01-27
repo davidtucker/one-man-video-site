@@ -25,14 +25,8 @@ class FeaturedArticleCard extends React.Component {
             <h4>Featured Article</h4>
             <h2><Link to={`/blog/${this.props.articleData.slug}`}>{this.props.articleData.title}</Link></h2>
             <p className={styles.description} dangerouslySetInnerHTML={{
-                __html: this.props.articleData.description.childMarkdownRemark.html
+                __html: this.props.articleData.description.description
               }}></p>
-            <p className={styles.dateTime}>January 18, 2019</p>
-            <div className={styles.byline}>
-                <img className={styles.authorImage} src="/images/david-tucker.png" />
-                <p className={styles.authorName}>Written by <Link to="/">David Tucker</Link></p>
-            </div>
-            
         </div>
       </div>
     )
