@@ -23,7 +23,7 @@ class RootIndex extends React.Component {
     return (
       <Layout location={this.props.location} >
         <div style={{ background: '#fff' }}>
-          <Helmet title={siteTitle} />
+          <Helmet title="One Man Video" />
           <div className={styles.siteHeaderContainer}>
             <h1 className={styles.siteHeader}>We help you create content.</h1>
             <p>Resources for the solo video content creator</p>

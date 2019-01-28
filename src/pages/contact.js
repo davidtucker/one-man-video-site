@@ -48,6 +48,7 @@ export default class Contact extends React.Component {
         <Hero 
           backgroundImage="/images/contact-bg.jpg"
           title="Contact Us" />
+        <Helmet title="Contact Us | One Man Video" />
         <div style={{ background: '#fff' }}>
           <div className={styles.contactWrapper}>
             <div className={styles.contactLeft}>

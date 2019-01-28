@@ -18,8 +18,8 @@ class BlogIndex extends React.Component {
         <Hero 
           backgroundImage="/images/blog-bg.jpg"
           title="Blog" />
+        <Helmet title="Blog | One Man Video" />
         <div style={{ background: '#fff' }}>
-          <Helmet title={siteTitle} />
           <div className="wrapper">
             <ul className="article-list">
               {posts.map(({ node }) => {
