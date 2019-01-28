@@ -32,7 +32,12 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sharp',
-    'gatsby-plugin-sitemap',
+    {
+      resolve: 'gatsby-plugin-sitemap',
+      exclude: [
+        '/success'
+      ]
+    },
     {
       resolve: 'gatsby-source-contentful',
       options: contentfulConfig,
