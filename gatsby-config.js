@@ -34,9 +34,11 @@ module.exports = {
     'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-plugin-sitemap',
-      exclude: [
-        '/success/'
-      ]
+      options: {
+        exclude: [
+          '/success*'
+        ]
+      }
     },
     {
       resolve: 'gatsby-source-contentful',
