@@ -12,7 +12,7 @@ export default ({ data }) => (
                 <Link to="/">
                     <img src="/images/one-man-video-logo.svg" />
                 </Link>
-                <p>I am sharing the knowledge I have gained of how to best create video content for the web by optimizing your production workflow.</p>
+                <p>Sharing knowledge on video production and optimization for the solo video content creator.</p>
                 <a href="http://eepurl.com/gffuhT" className={styles.footerButton}>Subscribe</a>
             </div>
             <div className={styles.preFooter2}>
