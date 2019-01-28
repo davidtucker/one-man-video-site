@@ -35,7 +35,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-sitemap',
       exclude: [
-        '/success'
+        '/success/'
       ]
     },
     {
