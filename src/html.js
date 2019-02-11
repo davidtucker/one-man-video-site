@@ -19,6 +19,7 @@ export default class HTML extends React.Component {
           <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#4655a5" />
           <meta name="msapplication-TileColor" content="#cccccc" />
           <meta name="theme-color" content="#ffffff"></meta>
+          <meta name="google-site-verification" content="SzdoukfyXwbdwHnwmAahe5rQYE7VLX79w4CzN3ADoOs" />
           {this.props.headComponents}
         </head>
         <body {...this.props.bodyAttributes}>
