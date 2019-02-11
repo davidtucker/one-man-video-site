@@ -20,6 +20,10 @@ class BlogPostTemplate extends React.Component {
       body += `<h2>Video Notes</h2>`;
     }
     body += `<div class="content-body">${post.body.childMarkdownRemark.html}</div>`
+    if(post.videoTranscript && post.videoTranscript.childMarkdownRemark.html.length > 1) {
+      body += `<h2>Video Transcript</h2>`;
+      body += `${post.videoTranscript.childMarkdownRemark.html}`
+    }
 
     return (
       <Layout location={this.props.location} >
@@ -66,6 +70,11 @@ export const pageQuery = graphql`
         }
       }
       headerEmbed {
+        childMarkdownRemark {
+          html
+        }
+      }
+      videoTranscript {
         childMarkdownRemark {
           html
         }
