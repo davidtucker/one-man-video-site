@@ -44,10 +44,9 @@ class Navigation extends React.Component {
             <li className={styles.navigationHighlightedItem}>
               <a href="https://www.youtube.com/channel/UCj72bZAgJHENdhQnKoYvb5A">YouTube</a>
             </li>
-            <li className={styles.navigationItem}>
+            <li className={styles.iconNavigationItem}>
               <Link to="/search/">
-                <Search 
-                    className="searchIcon" />
+                <Search className="searchIcon" />
               </Link>
             </li>
             <li className={styles.hamburgerIcon}>
