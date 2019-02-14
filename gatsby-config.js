@@ -1,6 +1,6 @@
-require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
-})
+require("dotenv").config()
+
+const queries = require('./src/utils/algolia')
 
 let contentfulConfig
 
@@ -38,6 +38,15 @@ module.exports = {
         exclude: [
           '/success*'
         ]
+      }
+    },
+    {
+      resolve: `gatsby-plugin-algolia`,
+      options: {
+        appId: process.env.GATSBY_ALGOLIA_APP_ID,
+        apiKey: process.env.ALGOLIA_ADMIN_KEY,
+        queries,
+        chunkSize: 10000
       }
     },
     {
