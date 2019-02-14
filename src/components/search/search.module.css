@@ -1,0 +1,132 @@
+.searchIcon {
+    width: 1em;
+    color: #AAA;
+    transition: 0.25s;
+    padding-left: 20px;
+    height: 30px;
+}
+
+.resultsWrapper {
+    position: relative;
+}
+
+.noResults {
+    text-align: center;
+    width: 100%;
+    font-style: italic;
+    color: #CCC;
+    padding-bottom: 15px;
+    padding-top: 25px;
+}
+
+.wrapper {
+    display: flex;
+}
+
+.wrapperShow {
+    background-color: #EFEFEF;
+    margin-left: 15px;
+}
+
+.term {
+    color: #999;
+    font-weight: 600;
+}
+
+.searchInputWrapper {
+    width: 0;
+    overflow: hidden;
+    transition: 0.5s;
+    display: flex;
+}
+
+.searchInput {
+    font-family: 'Open Sans', sans-serif;
+    color: #999;
+    border:none;
+    font-size: 16px;
+    padding-bottom: 3px;
+    padding-left: 0px;
+    padding-right: 5px;
+    padding-top: 3px;
+    background-color: transparent;
+    width: 100%;
+}
+
+.searchInput:focus {
+    outline-offset: 0px !important;
+    outline: none !important;
+}
+
+.searchCloseButton {
+    height: 30px;
+    background-color: transparent;
+    border: 0px;
+    font-size: 14px;
+    display: block;
+    margin-right: 2px;
+    color: #AAA;
+}
+
+.show {
+    width: 120px;
+    height: 30px;
+    opacity: 1;
+    margin-left: 15px;
+}
+
+.resultsContainer {
+    position: absolute;
+    max-height: 80vh;
+    background-color: #FFF;
+    width: 600px;
+    top: 10px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    right: 0px;
+    padding: 20px;
+    border: 1px solid #CCC;
+}
+
+.resultsSectionHeader {
+    font-size: 12px;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+    border-bottom: 1px solid #DDD;
+}
+
+.hitWrapper {
+    padding: 20px 20px;
+    line-height: 14px;
+}
+
+.hitWrapper:hover {
+    background-color: #EFEFEF;
+}
+
+.hitTitle {
+    font-size: 14px;
+    color: #333;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.hitLink {
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.hitDate {
+    font-size: 12px;
+    color: #AAA;
+    padding: 0;
+    margin: 0;
+    font-style: italic;
+}
+
+.hitSnippet {
+    font-size: 12px;
+    color: #333;
+}
+

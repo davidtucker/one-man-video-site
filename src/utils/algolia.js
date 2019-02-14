@@ -37,7 +37,7 @@ const queries = [
     {
         query: postQuery,
         transformer: ({ data }) => flatten(data.posts.edges),
-        indexName: `${process.env.SEARCH_INDEX_PREFIX}_omv_posts`,
+        indexName: `${process.env.GATSBY_SEARCH_INDEX_PREFIX}_omv_posts`,
         settings
     }
 ]

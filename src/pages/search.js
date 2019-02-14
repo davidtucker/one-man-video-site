@@ -23,11 +23,7 @@ import {
 
   import PostHit from '../components/search/PostHit'
 
-import heroStyles from '../components/hero.module.css'
 
-const searchIndices = [
-    { name: `dev_omv_posts`, title: `Posts`, hitComp: `PostHit` }
-]
 
 const Stats = connectStateResults(
   ({ searchResults: res, searchState }) =>
@@ -66,7 +62,7 @@ class SearchPage extends React.Component {
                 <InstantSearch
                     appId={process.env.GATSBY_ALGOLIA_APP_ID}
                     apiKey={process.env.GATSBY_ALGOLIA_SEARCH_KEY}
-                    indexName={searchIndices[0].name}
+                    indexName={process.env.GATSBY_SEARCH_INDEX_PREFIX + '_omv_posts'}
                     onSearchStateChange={this.updateState}
                     root={{ Root: 'div' }}>
                     <div className="ais-container">
