@@ -53,33 +53,33 @@ class SearchPage extends React.Component {
 
   render() {
     return (
-        <Layout location={this.props.location} >
-        <Helmet title="Search | One Man Video" />
-            <div style={{ background: '#fff' }}>
-              <div className="wrapper">
-                <h2 className={styles.pageTitle}>Search.</h2>
-                <p className={styles.pageSubtitle}>Please enter your search terms below.</p>
-                <InstantSearch
-                    appId={process.env.GATSBY_ALGOLIA_APP_ID}
-                    apiKey={process.env.GATSBY_ALGOLIA_SEARCH_KEY}
-                    indexName={process.env.GATSBY_SEARCH_INDEX_PREFIX + '_omv_posts'}
-                    onSearchStateChange={this.updateState}
-                    root={{ Root: 'div' }}>
-                    <div className="ais-container">
-                        <Configure hitsPerPage={5} />
-                        <SearchBox />
-                        <ConnectedResults>
-                          <div className={styles.stats}>
-                            <Stats />
-                          </div>
-                          <Hits hitComponent={PostHit} />
-                          <Pagination />
-                        </ConnectedResults>
-                    </div>
-                </InstantSearch>
-            </div>
+      <Layout location={this.props.location} >
+        <div style={{ background: '#fff' }}>
+          <Helmet title="Search | One Man Video" />
+          <div className="wrapper">
+            <h2 className={styles.pageTitle}>Search.</h2>
+            <p className={styles.pageSubtitle}>Please enter your search terms below.</p>
+            <InstantSearch
+                appId={process.env.GATSBY_ALGOLIA_APP_ID}
+                apiKey={process.env.GATSBY_ALGOLIA_SEARCH_KEY}
+                indexName={process.env.GATSBY_SEARCH_INDEX_PREFIX + '_omv_posts'}
+                onSearchStateChange={this.updateState}
+                root={{ Root: 'div' }}>
+                <div className="ais-container">
+                    <Configure hitsPerPage={5} />
+                    <SearchBox />
+                    <ConnectedResults>
+                      <div className={styles.stats}>
+                        <Stats />
+                      </div>
+                      <Hits hitComponent={PostHit} />
+                      <Pagination />
+                    </ConnectedResults>
+                </div>
+            </InstantSearch>
         </div>
-      </Layout>
+      </div>
+    </Layout>
     )
   }
 }

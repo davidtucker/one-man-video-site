@@ -93,7 +93,7 @@
 }
 
 :global(.searchIcon) {
-    width: 1.5em;
+    width: 20px;
     color: #AAA;
     transition: 0.25s;
     padding-left: 10px;
