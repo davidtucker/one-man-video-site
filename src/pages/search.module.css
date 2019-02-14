@@ -1,0 +1,108 @@
+.pageTitle {
+    font-size: 64px;
+    color: #4655a5;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    line-height: 60px;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 5px;
+}
+
+.pageSubtitle {
+    font-style: italic;
+    color: #999;
+    font-size: 18px;
+}
+
+.stats {
+    font-style: italic;
+    color: #AAA;
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+.noResults {
+    padding: 20px 0;
+    color: #AAA;
+    font-size: 16px;
+    font-style: italic;
+}
+
+.noResults span {
+    color: #666;
+    font-weight: 660;
+}
+
+:global(.ais-container) {
+    width: 100%;
+}
+
+:global(.ais-SearchBox) {
+    width: 100%;
+}
+
+:global(.ais-SearchBox-input) {
+    width: 100%;
+    font-size: 16px;
+    padding: 10px;
+    border: 1px solid #CCC;
+    border-radius: 4px;
+    color: #666;
+    font-style: italic;
+    -webkit-appearance: none;
+}
+
+:global(.ais-SearchBox-input:focus) {
+    outline-offset: 0px !important;
+    outline: none !important;
+}
+
+:global(.ais-SearchBox-submit), :global(.ais-SearchBox-reset) {
+    display: none;
+}
+
+:global(.ais-Hits-list), :global(.ais-Pagination-list) {
+    list-style: none;
+    margin: 20px 0;
+    padding: 0;
+    margin-top: 20px;
+}
+
+:global(.ais-Pagination-list) {
+    display: flex;
+}
+
+:global(.ais-Pagination-item) {
+    padding: 5px 10px;
+    border: 1px solid #CCC;
+    margin-right: 10px;
+    font-size: 14px;
+    transition: 0.5s;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+:global(.ais-Pagination-item:hover) {
+    text-decoration: none;
+    background-color: #EFEFEF;
+}
+
+:global(.ais-Pagination-item a) {
+    text-decoration: none;
+}
+
+:global(.searchIcon) {
+    width: 1.5em;
+    color: #AAA;
+    transition: 0.25s;
+    padding-left: 10px;
+    height: 30px;
+    transition: 0.5s;
+}
+
+:global(.searchIcon:hover) {
+    color: #FFF;
+}
+
+

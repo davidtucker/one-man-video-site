@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import HamburgerMenu from 'react-hamburger-menu'
 import { CSSTransitionGroup } from 'react-transition-group'
+import { Search } from 'styled-icons/fa-solid/Search'
 
 class Navigation extends React.Component { 
 
@@ -43,6 +44,12 @@ class Navigation extends React.Component {
             <li className={styles.navigationHighlightedItem}>
               <a href="https://www.youtube.com/channel/UCj72bZAgJHENdhQnKoYvb5A">YouTube</a>
             </li>
+            <li className={styles.navigationItem}>
+              <Link to="/search/">
+                <Search 
+                    className="searchIcon" />
+              </Link>
+            </li>
             <li className={styles.hamburgerIcon}>
               <HamburgerMenu
                 isOpen={this.state.showMobileMenu}
@@ -76,14 +83,17 @@ class MobileMenu extends React.Component {
         <li className={styles.mobileNavigationItem}>
           <Link to="/about/">About</Link>
         </li>
-        <li className={styles.mobiuleNavigationItem}>
+        <li className={styles.mobileNavigationItem}>
           <Link to="/blog/">Blog</Link>
         </li>
-        <li className={styles.mobiuleNavigationItem}>
+        <li className={styles.mobileNavigationItem}>
           <Link to="/contact/">Contact</Link>
         </li>
-        <li className={styles.mobiuleNavigationItem}>
+        <li className={styles.mobileNavigationItem}>
           <a href="https://www.youtube.com/channel/UCj72bZAgJHENdhQnKoYvb5A">YouTube</a>
+        </li>
+        <li className={styles.mobileNavigationItem}>
+          <Link to="/search/">Search</Link>
         </li>
       </ul>
     )
