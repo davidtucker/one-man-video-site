@@ -46,7 +46,7 @@ class Navigation extends React.Component {
             </li>
             <li className={styles.iconNavigationItem}>
               <Link to="/search/">
-                <Search title="Search" className="searchIcon" />
+                <Search title="Search" size="20" className="searchIcon" />
               </Link>
             </li>
             <li className={styles.hamburgerIcon}>
