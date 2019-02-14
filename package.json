@@ -21,6 +21,7 @@
     "gatsby-transformer-remark": "^2.1.6",
     "gatsby-transformer-sharp": "^2.1.10",
     "lodash": "^4.17.11",
+    "moment": "^2.24.0",
     "react": "^16.5.2",
     "react-burger-menu": "^2.6.1",
     "react-dom": "^16.5.2",
@@ -30,7 +31,10 @@
     "react-instantsearch-dom": "^5.4.0",
     "react-share": "^2.4.0",
     "react-transition-group": "1.x",
-    "sharp": "^0.21.0"
+    "remove-markdown": "^0.3.0",
+    "sharp": "^0.21.0",
+    "styled-components": "^4.1.3",
+    "styled-icons": "^6.12.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
@@ -61,7 +65,7 @@
     "lint": "eslint --ext .js,.jsx --ignore-pattern public .",
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js' 'src/**/*.md' 'bin/*.js'",
-    "build": "echo SITE_RECAPTCHA_KEY=$SITE_RECAPTCHA_KEY >> .env.production && gatsby build",
+    "build": "echo SITE_RECAPTCHA_KEY=$SITE_RECAPTCHA_KEY >> .env && gatsby build",
     "deploy": "gatsby build --prefix-paths && gh-pages -d public",
     "fix-semi": "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix *.js bin/*.js",
     "postinstall": "node ./bin/hello.js",
