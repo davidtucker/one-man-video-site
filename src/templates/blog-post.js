@@ -17,7 +17,6 @@ class BlogPostTemplate extends React.Component {
     let body = "";
     if(post.headerEmbed && post.headerEmbed.childMarkdownRemark.html.length > 1) {
       body += `<div class="video-responsive">${post.headerEmbed.childMarkdownRemark.html}</div>`;
-      body += `<h2>Video Notes</h2>`;
     }
     body += `<div class="content-body">${post.body.childMarkdownRemark.html}</div>`
     if(post.videoTranscript && post.videoTranscript.childMarkdownRemark.html.length > 1) {
