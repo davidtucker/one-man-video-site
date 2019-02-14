@@ -3,7 +3,7 @@ const chalk = require('chalk');
 const endOfLine = require('os').EOL;
 
 const environmentVariables = [
-    'SITE_RECAPTCHA_KEY',
+    'GATSBY_SITE_RECAPTCHA_KEY',
     'SITE_RECAPTCHA_SECRET',
     'GATSBY_ALGOLIA_APP_ID',
     'GATSBY_ALGOLIA_SEARCH_KEY',
