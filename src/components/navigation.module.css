@@ -79,7 +79,7 @@
 }
 
 @media screen and (max-width: 680px) {
-  .navigationItem, .navigationHighlightedItem {
+  .navigationItem, .navigationHighlightedItem, .iconNavigationItem {
     display: none;
   }
   .hamburgerIcon {
